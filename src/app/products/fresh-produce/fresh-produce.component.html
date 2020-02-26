@@ -1,0 +1,38 @@
+<div class="banner_sec" style="background: #fff url(assets/img/banner1.jpg) center;background-size: cover;background-repeat: no-repeat;min-height: 30vh;">
+  <div class="overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+  <div class="container text-content">
+      <h2 class="text-center">Fresh Produce</h2>      
+  </div>
+</div>
+
+<section id="product-list">
+  <div class="container">
+    <p class="desc text-center">
+        We offer some fresh produces like ginger, turmeric, red banana, corn etc. We purchase our agriculture products directly from farmers so we have no any requirement of intermediate so we give our products to our customer over all at low cost with good quality. 
+    </p>
+    <div class="row">
+      <div class="col-lg-4 col-sm-4 col-12 mb-12" *ngFor="let product of products">
+        <div class="product text-center">
+          <img src="../../assets/img/products/{{product.imageUrl}}" class="img-fluid"/>
+          <div class="product-caption">
+            <h6><a [routerLink]="['/products', product.url]">{{product.productName}}</a></h6>
+            <p>{{product.description}}</p>
+          </div>
+          <p class="action">
+            <button
+              class="btn btn-outline-secondary pull-left"
+              (click)="onNavigate(product.url)"
+              style="width: 80px"
+            >Explore</button>
+            <button
+              class="btn btn-outline-secondary enq pull-right"
+              (click)="onEnq()"
+              style="width: 80px"
+            >Enquiry</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<ngx-spinner></ngx-spinner>

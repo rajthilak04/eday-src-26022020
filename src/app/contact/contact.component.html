@@ -1,0 +1,96 @@
+<div class="banner_sec" style="background: #fff url(assets/img/banner-5.jpg) bottom;background-size: cover;background-repeat: no-repeat;min-height: 30vh;">
+  <div class="overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
+  <div class="container text-content">
+      <h2 class="text-center">Contact</h2>      
+  </div>
+</div>
+
+<section id="contact-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4">
+          <div class="content">
+              <h3 class="contact-page-title">Contact Us</h3>              
+              <div class="single-contact-block">
+                <h4><i class="fa fa-map-o"></i> Address</h4>
+                <p>352, Near Total petrol bunk</p>
+                <p>Vallalkaari Sreet, Ramnagar, Police checkpost</p>
+                <p>Ramnagar, Madipakkam, Chennai - 600091</p>
+              </div>              
+              <div class="single-contact-block">
+                <h4><i class="fa fa-mobile" style="font-size:40px;"></i> Phone</h4>
+                <p>Mobile: +91 90953 81704</p>
+                <p>Alternate: +91 81485 82488</p>
+              </div>
+              <div class="single-contact-block">
+                <h4><i class="fa fa-envelope-open-o"></i> Email</h4>
+                <p>edayexportz@gmail.com</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-8 col-md-8">
+          <h3>Tell Us Your Message</h3>
+          <div class="contact-form">
+                <form [formGroup]="edayContactForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="form-group col-lg-6"> 
+                            <label>Email</label>
+                            <input type="text" formControlName="email" autocomplete="off" class="form-control" [ngClass]="{ 'is-invalid': (submitted && f.email.errors) }" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.pattern">Email must be a valid email address</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label>Mobile number</label>
+                            <input type="text" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                            <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                                <div *ngIf="f.mobile.errors.required">Mobile number is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName="password" autocomplete="new-password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" formControlName="subject" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea type="text" formControlName="message" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                <!-- <p>Form value: {{ edayContactForm.value | json }}</p>
+                <p>Form status: {{ edayContactForm.status | json }}</p> -->
+          </div>
+          <div class="alert alert-success" [hidden]="mailnotsent">
+            <button type="button" class="close" (click)="hideNotify()">&times;</button>
+            <strong>Success!</strong> Your request has been sent. We will get back to you soon..
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

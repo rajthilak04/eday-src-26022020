@@ -1,0 +1,44 @@
+<div class="banner_sec" style="background: #fff url(assets/img/banner1.jpg);background-size: cover;background-repeat: no-repeat;min-height: 30vh;">
+    <div class="overlay" style="opacity: 0.7; background-color: rgb(0, 0, 0);"></div>
+    <div class="container text-content">
+        <h2 class="text-center" *ngIf="product">{{product.productName}}</h2>      
+    </div>
+</div>
+<section id="product-details">
+    <div class="container">
+        <div class="row" *ngIf="product">
+            <div class="col-lg-3 col-md-3 mb-4">
+                <img 
+                    class="center-block img-fluid"
+                    [style.margin.px]="2"
+                    src="../../../assets/img/products/{{product.imageUrl}}"
+                    [title]="product.productName"
+                />
+                <br/>
+                <h5>Gallery</h5>
+                <span class="gallery-thumb" *ngFor="let image of _albums; let i=index">
+                    <img [src]="image.thumb" (click)="open(i)" width="70" height="70"/>
+                </span>
+            </div>
+            <div class="col-lg-9 col-md-9 mb-8">
+                <h3>{{ product.productName }}</h3>
+                <h5>Description</h5>
+                <div [innerHtml]="product.fulldescription | safe: 'html'"></div>
+                <h5>Advantages</h5>
+                <div [innerHtml]="product.adv | safe: 'html'" class="adv"></div>
+                <button
+                    class="btn btn-outline-secondary grn"
+                    (click)="onContact()"
+                    style="width: 80px"
+                >Enquiry
+                </button>
+                <button
+                    class="btn btn-outline-secondary"
+                    (click)="onBack()"
+                    style="width: 80px"
+                >Back
+                </button>
+            </div> 
+        </div>
+    </div>    
+</section>

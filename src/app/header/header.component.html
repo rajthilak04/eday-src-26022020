@@ -1,0 +1,45 @@
+
+<header id="header">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/img/logo-186x86.png"/></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/home']" routerLinkActive="is-active">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" routerLinkActive="is-active" id="navbarDropdownPortfolio" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a> <!-- [routerLink]="['/products']" [routerLinkActiveOptions]="{exact:true}" -->
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" [routerLink]="['/spices']">Spices</a>
+                <a class="dropdown-item" [routerLink]="['/dhals']">Dhal / Seeds</a>
+                <a class="dropdown-item" [routerLink]="['/fresh-produce']">Fresh Produce</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/about']" routerLinkActive="is-active">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="is-active">Contact</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Portfolio
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item">1 Column Portfolio</a>
+                <a class="dropdown-item">2 Column Portfolio</a>
+                <a class="dropdown-item">3 Column Portfolio</a>
+                <a class="dropdown-item">4 Column Portfolio</a>
+                <a class="dropdown-item">Single Portfolio Item</a>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+</header>
