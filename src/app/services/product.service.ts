@@ -8,9 +8,9 @@ import { IProduct } from '../products/product';
   providedIn: 'root'
 })
 export class ProductService {
-  //private productServiceURL = 'https://extended-nodejs-api.herokuapp.com';
+  private productServiceURL = 'https://extended-nodejs-api.herokuapp.com';
   //private productServiceURL = window.location.protocol+'//'+window.location.host;
-  private productServiceURL = 'http://68.66.207.139:4444';
+  //private productServiceURL = 'http://68.66.207.139:4444';
   constructor(private http: HttpClient) { }
 
   getProducts():Observable<IProduct[]> {
